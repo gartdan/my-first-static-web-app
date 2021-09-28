@@ -16,7 +16,7 @@
 
   <div>
     <p>Click this button</p>
-    <button id="button1" onclick="buttonClicked()" text="Click me"></button>
+    <button id="button1" type="button" onclick="buttonClicked()">Click Me!</button>
   </div>
 
   <p>Loading content from the API: <b id="name">...</b></p>
@@ -31,7 +31,7 @@
 
     async function buttonClicked()
     {
-      let response = await fetch('/api/HttpTrigger1?name=Dan').text();
+      const { text } = await( await fetch(`/api/HttpTrigger1?name=Dan`)).text();
       alert(response);
     }
     </script>
