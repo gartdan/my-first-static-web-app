@@ -29,7 +29,7 @@
         alert(text);
     }())
 
-    function buttonClicked()
+    async function buttonClicked()
     {
       let response = await fetch('/api/HttpTrigger1?name=Dan').text();
       alert(response);
