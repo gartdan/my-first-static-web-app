@@ -32,7 +32,7 @@
     async function buttonClicked()
     {
       const { text } = await( await fetch(`/api/HttpTrigger1?name=Dan`)).text();
-      alert(response);
+      alert(text);
     }
     </script>
 
