@@ -26,12 +26,16 @@
     (async function() {
         const { text } = await( await fetch(`/api/HttpTrigger1?name=Dan`)).text();
         document.querySelector('#name').textContent = text;
-        alert(text);
+        //alert(text);
     }())
 
     async function buttonClicked()
     {
-      const { text } = await( await fetch(`/api/HttpTrigger1?name=Dan`)).text();
+      
+      let response = await fetch(`/api/HttpTrigger1?name=Dan`);
+      let json = await response.json();
+      let text = await response.text();
+
       alert(text);
     }
     </script>
