@@ -14,6 +14,11 @@
   </main>
   <div>This is a static web app.</div>
 
+  <div>
+    <p>Click this button</p>
+    <button id="button1" onclick="buttonClicked()"></button>
+  </div>
+
   <p>Loading content from the API: <b id="name">...</b></p>
 
 
@@ -21,7 +26,14 @@
     (async function() {
         const { text } = await( await fetch(`/api/HttpTrigger1?name=Dan`)).json();
         document.querySelector('#name').textContent = text;
+        alert(text);
     }())
+
+    function buttonClicked()
+    {
+      let response = await fetch('/api/HttpTrigger1?name=Dan').text();
+      alert(response);
+    }
     </script>
 
 
