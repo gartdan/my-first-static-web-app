@@ -15,4 +15,14 @@
   <div>This is a static web app.</div>
 </body>
 
+<p>Loading content from the API: <b id="name">...</b></p>
+    </main>
+
+    <script>
+    (async function() {
+        const { text } = await( await fetch(`/api/HttpTrigger1?name=Dan`)).json();
+        document.querySelector('#name').textContent = text;
+    }())
+    </script>
+
 </html>
