@@ -33,7 +33,7 @@
     {
       
       let response = await fetch(`/api/HttpTrigger1?name=Dan`);
-      let json = await response.json();
+      
       let text = await response.text();
 
       alert(text);
