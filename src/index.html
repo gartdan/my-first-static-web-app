@@ -34,7 +34,7 @@
 
     <script>
     (async function() {
-        const { text } = await( await fetch(`/api/HttpTrigger1?name=Dan`)).text();
+        const { text } = await( await fetch(`/api/HttpTrigger3?name=Dan`)).text();
         document.querySelector('#name').textContent = text;
         //alert(text);
     }())
